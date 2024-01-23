@@ -1,17 +1,21 @@
 import sys
-from operation import add, subtract, multiply, divide
+from operation import add, subtract, multiply, divide  
 
 def checkOperation(num1, operator, num2):
-    if operator == 'add':
-        return add(num1, num2)
-    elif operator == 'sub':
-        return subtract(num1, num2)
-    elif operator == 'mult':
-        return multiply(num1, num2)
-    elif operator == 'div':
-        return divide(num1, num2)
+    operationsDictionary = {
+        'addition': add,
+        'subtraction': subtract,  
+        'multiplication': multiply,  
+        'division': divide
+    }
+    
+    operationPerform = operationsDictionary.get(operator)
+    if operationPerform is not None:
+        result = operationPerform(num1, num2)
+        return result
     else:
-        return "Invalid operator. Please use add, sub, mult, div"
+        print("Invalid operation. Please choose from addition, subtraction, multiplication, or division.")
+        return None
 
 def main():
     if len(sys.argv) > 1:
