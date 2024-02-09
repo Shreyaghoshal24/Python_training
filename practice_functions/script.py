@@ -31,7 +31,7 @@ def create_dictionary(keys, values):
 # Main part of the script for testing
 if __name__ == "__main__":
     # Test square function
-    print("Square of 5:", square(5))
+    print("Square of 4:", square(4))
 
     # Test even/odd function
     print("Is 7 even or odd?", check_even_odd(7))
