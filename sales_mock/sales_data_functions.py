@@ -1,7 +1,7 @@
 import pandas as pd
 from typing import List, Dict, Union
 
-def import_sales_data(file_path: str) -> List[Dict[str, Union[str, int, float]]]:
+def import_sales_data(file_path: str) -> List[Dict[str, Union[str, int, float]]]: 
     df = pd.read_excel(file_path)
     return df.to_dict(orient='records')
 
